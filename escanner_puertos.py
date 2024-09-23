@@ -9,6 +9,9 @@ from puerto in range(1,65535):
     sock.settimeout(5)
 # Se conecta a la ip que le damos en el puerto especificado
     result = sock.connect_ex((ip, puerto))
-
+# Imprimimos los resultados
     if result == 0:
-        print
+        print("Puerto abierto: " + str(puerto))
+        sock.close()
+    else:
+        print("Puerto Cerrado: " + str(puerto))
